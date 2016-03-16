@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <ImageView
+        android:id="@+id/listicon"
+        android:layout_width="50px"
+        android:layout_height="50px"
+        android:layout_marginLeft="5px"
+        android:layout_marginRight="20px"
+        android:layout_marginTop="5px"
+        >
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/editicon"
+        android:layout_width="50px"
+        android:layout_height="50px"
+        android:layout_alignTop="@+id/listicon"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/listlabel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@+id/label"
+        android:textSize="30px"
+        android:layout_weight="0.09"
+        android:layout_gravity="center_vertical"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/listicon"
+        android:layout_alignBottom="@+id/listicon"
+        android:layout_toLeftOf="@+id/editicon"
+        android:layout_toStartOf="@+id/editicon">
+    </TextView>
+
+</RelativeLayout>

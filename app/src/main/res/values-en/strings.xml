@@ -8,4 +8,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="main_menu">Main Menu</string>
     <string name="battery_level">Battery level:</string>
+    <string name="delete_title">Deleting</string>
+    <string name="delete_info">Do you really want to delete?</string>
 </resources>

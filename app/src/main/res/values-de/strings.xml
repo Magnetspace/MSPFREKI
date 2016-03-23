@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="battery_level"></string>
+    <string name="battery_level">Batterie Level:</string>
+    <string name="update">Aktualisieren</string>
+    <string name="stop">Stop</string>
+    <string name="start">Start</string>
+    <string name="select_profile">Starten Sie ausgewählt</string>
+    <string name="power">Kraft:</string>
+    <string name="main_menu">Hauptmenü</string>
+    <string name="list_update_error"> Kann nicht die Liste zu aktualisieren</string>
+    <string name="list_update"> Liste aktualisiert</string>
+    <string name="list_start_error">Kann nicht ohne Auswahl starten</string>
+    <string name="list_name">Stellen Sie den Listennamen</string>
+    <string name="list_delete">List deleted</string>
+    <string name="list_add_error"> Kann nicht die Liste Datenbank hinzufügen</string>
+    <string name="list_add"> Liste hinzugefügt</string>
+    <string name="length">Länge:</string>
+    <string name="languages">Sprachen</string>
+    <string name="delete_title">Löschen</string>
+    <string name="delete_profile">Ausgewählte löschen</string>
+    <string name="delete_info">Wollen Sie wirklich löschen?</string>
+    <string name="create_profile">Neue Liste erstellen</string>
+    <string name="create">Erstellen</string>
+    <string name="back">Zurück</string>
 </resources>

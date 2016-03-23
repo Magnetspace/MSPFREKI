@@ -1,2 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">Magnetspace Frequency 1.4</string>
+    <string name="stop">Oprire</string>
+    <string name="power">Intensitate:</string>
+    <string name="start">Pornire</string>
+    <string name="list_name">Denumirea listei</string>
+    <string name="create">Creare</string>
+    <string name="update">Reinnoire</string>
+    <string name="length">Lungime:</string>
+    <string name="select_profile">Pornirea selectiei</string>
+    <string name="create_profile">Creare lista noua</string>
+    <string name="delete_profile">Stergerea selectiei</string>
+    <string name="delete_info">Sigur doriti sa stergeti?</string>
+    <string name="languages">Limba</string>
+    <string name="back">Înapoi</string>
+    <string name="battery_level">Nivelul bateriei:</string>
+    <string name="list_add">Lista de succes adăugat</string>
+    <string name="list_add_error">Nu se pot adăuga lista de la baza de date</string>
+    <string name="list_delete"> Lista de șters</string>
+    <string name="list_start_error">Nu poate începe fără selecție</string>
+    <string name="list_update"> Lista actualizată</string>
+    <string name="list_update_error">Nu se poate actualiza lista</string>
+    <string name="main_menu">Meniul principal</string>
+    <string name="delete_title">Stergere</string>
+</resources>

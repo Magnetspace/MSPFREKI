@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Magnetspace Frequency 1.4</string>
+    <string name="app_name" translatable="false">Magnetspace Frequency 1.5</string>
 
     <string name="action_settings" translatable="false">Settings</string>
     <string name="title_activity_main_activity2">MainActivity2Activity</string>
@@ -17,15 +17,15 @@
     <string name="main_menu">Main Menu</string>
     <string name="languages">Languages</string>
     <string name="list_name">Set the list name</string>
-    <string name="list_add">List Successfully Added</string>
+    <string name="list_add">List Added</string>
     <string name="list_add_error">Can\'t add list to db</string>
-    <string name="list_update">List Successfully Updated</string>
+    <string name="list_update">List Updated</string>
     <string name="list_update_error">Can\'t update the list</string>
     <string name="back">Back</string>
     <string name="create">Create</string>
     <string name="update">Update</string>
     <string name="list_start_error">Can\'t start without selection</string>
-    <string name="list_delete">List deleted successfully</string>
+    <string name="list_delete">List deleted</string>
     <string name="start">Start</string>
     <string name="stop">Stop</string>
     <string name="power">Power:</string>

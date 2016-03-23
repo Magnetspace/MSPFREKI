@@ -22,4 +22,5 @@
     <string name="select_profile">Spusteni vybrane terapie</string>
     <string name="start">Spustit</string>
     <string name="stop">Zastavit</string>
+    <string name="update">Aktualizovať</string>
 </resources>

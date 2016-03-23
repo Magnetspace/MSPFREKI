@@ -3,6 +3,7 @@ package net.magnetspace.frequency.GUI;
 
 import android.content.Context;
 import android.content.res.Configuration;
+import android.provider.Settings;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -21,15 +22,21 @@ import java.util.Locale;
 public class LanguageSelectFragment extends Fragment {
     private String selected_item="English";
     private static String languageCode="en";
+    private DatabaseHandler databaseHandler;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        databaseHandler = new DatabaseHandler(getActivity().getBaseContext());
+        Locale current = new Locale(databaseHandler.getLocale());
+        Configuration config = new Configuration();
+        config.locale = current;
+        getActivity().getBaseContext().getResources().updateConfiguration(config,
+                getActivity().getBaseContext().getResources().getDisplayMetrics());
         View rootView = inflater.inflate(R.layout.fragment_language_select, container, false);
-        Locale current = getResources().getConfiguration().locale;
-        languageCode = current.getCountry().toLowerCase();
+        languageCode = current.getLanguage().split("_")[0];
         if(languageCode.equals("us")) languageCode = "en";
         if(languageCode.equals(""))
-            languageCode = current.toString();
+            languageCode = current.getLanguage().split("_")[0];
         String[] values = new String[] {"Magyar", "English", "Greek", "Romanian", "Russian", "German", "Slovakian"};
         LanguageArrayAdapter languageArrayAdapter = new LanguageArrayAdapter(getActivity(), values);
         final ListView temp =(ListView) rootView.findViewById(R.id.languageList);
@@ -38,10 +45,11 @@ public class LanguageSelectFragment extends Fragment {
         temp.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> myAdapter, View myView, int myItemInt, long mylng) {
-                selected_item =(String) (temp.getItemAtPosition(myItemInt));
+                selected_item = (String) (temp.getItemAtPosition(myItemInt));
                 setLanguage();
             }
         });
+
         return rootView;
     }
 
@@ -62,11 +70,11 @@ public class LanguageSelectFragment extends Fragment {
         else
             locale = new Locale("de");
 
-        languageCode = locale.toString();
-
+        databaseHandler.setLocale(locale.getLanguage().split("_")[0]);
         Locale.setDefault(locale);
         Configuration config = new Configuration();
         config.locale = locale;
+
         getActivity().getBaseContext().getResources().updateConfiguration(config,
                 getActivity().getBaseContext().getResources().getDisplayMetrics());
         getActivity().finish();

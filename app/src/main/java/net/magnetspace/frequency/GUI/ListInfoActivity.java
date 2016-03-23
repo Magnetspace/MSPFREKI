@@ -9,8 +9,11 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import net.magnetspace.frequency.GUI.Adapters.CustomListAdapter;
 import net.magnetspace.frequency.R;
 import net.magnetspace.frequency.SQL.DatabaseHandler;
+
+import java.util.ArrayList;
 
 public class ListInfoActivity extends Activity {
 
@@ -21,7 +24,10 @@ public class ListInfoActivity extends Activity {
         getActionBar().hide();
         DatabaseHandler databaseHandler = new DatabaseHandler(this);
         ListView listView = (ListView)findViewById(R.id.listView2);
-        listView.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, databaseHandler.getSelectedFreqNames()));
+        int listID = getIntent().getIntExtra(CustomListAdapter.listID, -1);
+        ArrayList<String> temp = databaseHandler.getSelectedFreqNames(listID);
+        listView.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, temp));
+        getApplication();
     }
 
     @Override

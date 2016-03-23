@@ -91,7 +91,7 @@ public class FrequencyPlayerActivity extends Activity {
         frequencyGenerator = new FrequencyGenerator();
 
         final ListView listView = (ListView)findViewById(R.id.listView3);
-        listView.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, dbHandler.getSelectedFreqNames()));
+        listView.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, dbHandler.getSelectedFreqNames(MainActivity.getSelectedListItemID())));
         playList = dbHandler.getFrequencies();
         seekBar.setMax(playList.size()*60);
         seekBar.setProgress(0);

@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import net.magnetspace.frequency.Core.Element;
 import net.magnetspace.frequency.GUI.CreatingListActivity;
+import net.magnetspace.frequency.GUI.ListInfoActivity;
 import net.magnetspace.frequency.R;
 
 import java.util.ArrayList;
@@ -49,7 +50,10 @@ public class CustomListAdapter extends ArrayAdapter  {
             imageView2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    launchRingDialog(view, position);
+                    Intent intent = new Intent(activity, ListInfoActivity.class);
+                    intent.putExtra(CustomListAdapter.listID, values.get(position).getId());
+                    activity.startActivity(intent);
+                    activity.finish();
                 }
             });
 
@@ -63,10 +67,6 @@ public class CustomListAdapter extends ArrayAdapter  {
             public void run() {
                 try {
                     Thread.sleep(2000);
-                    Intent intent = new Intent(CustomListAdapter.this.activity, CreatingListActivity.class);
-                    intent.putExtra(CustomListAdapter.listID, values.get(position).getId());
-                    activity.startActivity(intent);
-                    activity.finish();
 
                 } catch (Exception e) {
 

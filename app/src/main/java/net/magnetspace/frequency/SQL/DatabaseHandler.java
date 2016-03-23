@@ -63,6 +63,25 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return db.insert("ListName", null, contentValues);
     }
 
+    public void setLocale(String code)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("update settings set locale='"+code+"';");
+        //ContentValues contentValues = new ContentValues();
+        //contentValues.put("locale", code);
+        //long ret = db.update("android_metadata", contentValues, "id=1", null);
+        //return ret;
+    }
+
+    public String getLocale()
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res = db.rawQuery("select locale from settings", null);
+        res.moveToFirst();
+        String ret = res.getString(res.getColumnIndex("locale"));
+        return ret;
+    }
+
     public long addToList(int listID, int therapyID)
     {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -152,7 +171,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     public boolean checkVersion() {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res = db.rawQuery("select * from android_metadata", null);
+        Cursor res = db.rawQuery("select * from settings", null);
         res.moveToFirst();
         int darab = res.getColumnCount();
         if(darab > 1)
@@ -192,12 +211,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return playList;
     }
 
-    public ArrayList<String> getSelectedFreqNames() {
+    public ArrayList<String> getSelectedFreqNames(int id) {
         ArrayList<String> ret = new ArrayList<String>();
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res = db.rawQuery("select Therapy.name_"+LanguageSelectFragment.getSelectedLanguage()+
                 " from Therapy join ListFreq on Therapy._id=ListFreq.therapyID where ListFreq.listID="+
-                MainActivity.getSelectedListItemID(), null);
+                id, null);
+
         res.moveToFirst();
 
         while(res.isAfterLast() == false) {

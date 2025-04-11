@@ -1,39 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:fadingEdge="horizontal"
+    android:verticalScrollbarPosition="defaultPosition"
+    android:visibility="visible">
+
     <ImageView
         android:id="@+id/listicon"
-        android:layout_width="50px"
-        android:layout_height="50px"
-        android:layout_marginLeft="5px"
-        android:layout_marginRight="20px"
-        android:layout_marginTop="5px"
-        >
-    </ImageView>
+        android:layout_width="45dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/editicon"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
+        android:background="@android:color/transparent"
+        android:contentDescription=""
+        android:src="@mipmap/ecg_chart"
+        tools:ignore="ContentDescription"
+        tools:src="@mipmap/ecg_chart"></ImageView>
 
     <ImageView
         android:id="@+id/editicon"
-        android:layout_width="50px"
-        android:layout_height="50px"
-        android:layout_alignTop="@+id/listicon"
+        android:layout_width="45dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/listlabel"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
-    </ImageView>
+        android:layout_centerInParent="true"
+        android:adjustViewBounds="false"
+        android:background="@android:color/transparent"
+        android:contentDescription=""
+        android:src="@android:color/black"
+        tools:ignore="ContentDescription"
+        tools:src="@mipmap/patient_chart"></ImageView>
 
     <TextView
         android:id="@+id/listlabel"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@+id/label"
-        android:textSize="30px"
-        android:layout_weight="0.09"
-        android:layout_gravity="center_vertical"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/listicon"
-        android:layout_alignBottom="@+id/listicon"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@+id/space2"
+        android:layout_centerInParent="true"
+        android:layout_gravity="left|center_vertical"
+        android:layout_toStartOf="@+id/editicon"
         android:layout_toLeftOf="@+id/editicon"
-        android:layout_toStartOf="@+id/editicon">
-    </TextView>
+        android:layout_toRightOf="@+id/listicon"
+        android:layout_weight="0.40"
+        android:background="@android:color/transparent"
+
+        android:fontFamily="monospace"
+        android:lineSpacingExtra="8sp"
+        android:text="@+id/label"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="30dp"
+        android:typeface="monospace"
+        tools:ignore="ObsoleteLayoutParam,PxUsage,RtlHardcoded"></TextView>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:layout_alignBottom="@+id/editicon"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:contentDescription=""
+        android:src="@android:color/background_light" />
+
+    <Space
+        android:id="@+id/space3"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_below="@+id/listlabel"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_toEndOf="@+id/listicon" />
+
+    <Space
+        android:id="@+id/space2"
+        android:layout_width="5dp"
+        android:layout_height="5dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/space2"
+        android:layout_toRightOf="@+id/space2" />
 
 </RelativeLayout>

@@ -78,7 +78,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res = db.rawQuery("select locale from settings", null);
         res.moveToFirst();
-        String ret = res.getString(res.getColumnIndex("locale"));
+        String ret = res.getString(0);
         return ret;
     }
 
@@ -171,10 +171,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     public boolean checkVersion() {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res = db.rawQuery("select * from settings", null);
+        Cursor res = db.rawQuery("select version from settings", null);
         res.moveToFirst();
-        int darab = res.getColumnCount();
-        if(darab > 1)
+        int v = res.getInt(0);
+        if(v == 2)
             return true;
         else
             return false;

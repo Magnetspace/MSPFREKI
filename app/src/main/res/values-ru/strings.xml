@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name" translatable="false"></string>
-    <string name="back">назад</string>
-    <string name="battery_level">уровень заряда батареи</string>
+    <string name="back">Назад</string>
+    <string name="battery_level">Уровень заряда батареи</string>
     <string name="create">Создайте</string>
     <string name="create_profile">Создать новый список</string>
     <string name="delete_info">Вы действительно хотите удалить?</string>
     <string name="delete_profile">Удалить выбранное</string>
     <string name="delete_title">Удаление</string>
     <string name="languages">Языки</string>
-    <string name="length">длина</string>
+    <string name="length">Длина</string>
     <string name="list_add">Список добавил</string>
     <string name="list_add_error">Невозможно добавить список БД</string>
     <string name="list_delete">Список удален</string>
     <string name="list_name">Установить имя списка</string>
-    <string name="list_start_error"> Не удается запустить без выбора</string>
-    <string name="list_update"> Список обновляется</string>
+    <string name="list_start_error">Не удается запустить без выбора</string>
+    <string name="list_update">Список обновляется</string>
     <string name="list_update_error">Невозможно обновить список</string>
     <string name="main_menu">Главное меню</string>
     <string name="power">Мощность:</string>
     <string name="select_profile">Запустить выбранный</string>
     <string name="start">Начало</string>
-    <string name="stop"> Стоп</string>
+    <string name="stop">Стоп</string>
     <string name="update">Обновить</string>
 </resources>

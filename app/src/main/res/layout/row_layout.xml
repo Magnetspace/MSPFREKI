@@ -1,25 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:padding="5dp" >
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@android:color/transparent"
+    android:padding="5dp"
+    android:weightSum="1"
+    tools:ignore="UseCompoundDrawables">
 
     <ImageView
         android:id="@+id/icon"
-        android:layout_width="50px"
-        android:layout_height="50px"
-        android:layout_marginLeft="5px"
-        android:layout_marginRight="20px"
-        android:layout_marginTop="5px"
-         >
-    </ImageView>
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20px"
+        android:layout_marginTop="0px"
+        android:layout_marginRight="40px"
+        android:background="@android:color/transparent"
+        android:contentDescription=""
+        tools:ignore="ContentDescription,InefficientWeight,PxUsage,RtlHardcoded" />
 
     <TextView
         android:id="@+id/label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:fontFamily="monospace"
         android:text="@+id/label"
-        android:textSize="30px" >
-    </TextView>
+        android:textSize="25sp"
+        tools:ignore="PxUsage,SpUsage"
+        tools:targetApi="jelly_bean" />
 
-</LinearLayout> 
+</LinearLayout>

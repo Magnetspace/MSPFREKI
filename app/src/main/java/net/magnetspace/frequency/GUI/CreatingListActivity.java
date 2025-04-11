@@ -93,7 +93,7 @@ public class CreatingListActivity extends Activity {
     }
 
     public void launchRingDialog(View view) {
-        final ProgressDialog ringProgressDialog = ProgressDialog.show(CreatingListActivity.this, "Please wait ...",	"Searching ...", true);
+        final ProgressDialog ringProgressDialog = ProgressDialog.show(CreatingListActivity.this, "Várjon...",	"Betöltés folyamatban ...", true);
         ringProgressDialog.setCancelable(false);
         new Thread(new Runnable() {
             @Override
@@ -297,10 +297,12 @@ public class CreatingListActivity extends Activity {
                 Toast.makeText(getApplicationContext(),
                         getResources().getString(R.string.list_add),
                         Toast.LENGTH_SHORT).show();
-            } else
+            } else {
+
                 Toast.makeText(getApplicationContext(),
                         getResources().getString(R.string.list_add_error),
                         Toast.LENGTH_SHORT).show();
+            }
         } else {
             if (updateListInDb()) {
                 Toast.makeText(getApplicationContext(),
@@ -311,6 +313,10 @@ public class CreatingListActivity extends Activity {
                         getResources().getString(R.string.list_update_error),
                         Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void back()
+    {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();

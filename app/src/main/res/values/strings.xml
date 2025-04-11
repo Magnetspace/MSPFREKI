@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Magnetspace Frequency 1.5</string>
+    <string name="app_name" translatable="false">MSP QUALITY FREQUENCY</string>
 
     <string name="action_settings" translatable="false">Settings</string>
     <string name="title_activity_main_activity2">MainActivity2Activity</string>
@@ -18,13 +18,13 @@
     <string name="languages">Languages</string>
     <string name="list_name">Set the list name</string>
     <string name="list_add">List Added</string>
-    <string name="list_add_error">Can\'t add list to db</string>
+    <string name="list_add_error">Can\\\'t add list to db</string>
     <string name="list_update">List Updated</string>
-    <string name="list_update_error">Can\'t update the list</string>
+    <string name="list_update_error">Can\\\'t update the list</string>
     <string name="back">Back</string>
     <string name="create">Create</string>
     <string name="update">Update</string>
-    <string name="list_start_error">Can\'t start without selection</string>
+    <string name="list_start_error">Can\\\'t start without selection</string>
     <string name="list_delete">List deleted</string>
     <string name="start">Start</string>
     <string name="stop">Stop</string>
@@ -36,5 +36,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="battery_level">Battery level:</string>
     <string name="length">Length:</string>
+    <string name="_0_00_0_00">0:00/0:00</string>
 
 </resources>

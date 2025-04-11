@@ -6,7 +6,7 @@
     <string name="create_profile">Nova slozka</string>
     <string name="delete_info">Urcite chcete smazat?</string>
     <string name="delete_profile">Vymazat oznacene</string>
-    <string name="delete_title">smazat</string>
+    <string name="delete_title">Smazat</string>
     <string name="hello_blank_fragment"></string>
     <string name="languages">Jazyk</string>
     <string name="length">Cas</string>

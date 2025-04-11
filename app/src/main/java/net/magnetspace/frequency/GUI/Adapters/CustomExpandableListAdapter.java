@@ -197,7 +197,6 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter imple
             viewHolder.textView = (TextView) view.findViewById(R.id.itemName);
             viewHolder.checkBox = (CheckBox) view.findViewById(R.id.itemDescr);
             ImageView imageView = (ImageView) view.findViewById(R.id.iconforchild);
-            imageView.setImageResource(R.mipmap.cardiology);
 
             view.setTag(viewHolder);
         }

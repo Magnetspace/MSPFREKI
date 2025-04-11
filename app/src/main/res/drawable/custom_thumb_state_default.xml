@@ -12,7 +12,7 @@
 		android:width="1dip"
 		android:color="#ffffffff" />
 	<gradient
-		android:startColor="#ffcdcdcd"
+		android:startColor="#e70a0a"
 		android:endColor="#fff8f8f8"
 		android:angle="270"
 		android:type="linear" />

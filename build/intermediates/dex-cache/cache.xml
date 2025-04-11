@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="E:\Source\EWS_app_2\app\libs\RootTools.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="16b2d49a7359c9ddbfcb1bc66f9c342c502e821b">
+        <dex dex="E:\Source\EWS_app_2\app\build\intermediates\pre-dexed\debug\RootTools_d63be3bcbee0d03e2ed960a2380464256e1d0d76.jar" />
+    </item>
+
+</items>

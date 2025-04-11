@@ -10,10 +10,10 @@
 		android:height="35dip" />
 	<stroke
 		android:width="1dip"
-		android:color="#ffffc27e" />
+		android:color="#949490" />
 	<gradient
-		android:startColor="#ffed6100"
-		android:endColor="#ffffc27e"
+		android:startColor="#767671"
+		android:endColor="#1e1e1d"
 		android:angle="270"
 		android:type="linear" />
 </shape>

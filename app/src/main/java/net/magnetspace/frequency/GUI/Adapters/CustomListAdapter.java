@@ -44,7 +44,6 @@ public class CustomListAdapter extends ArrayAdapter  {
             ImageView imageView2 = (ImageView) rowView.findViewById(R.id.editicon);
 
             textView.setText(values.get(position).getText());
-            imageView.setImageResource(R.mipmap.ecg_chart);
             imageView2.setImageResource(R.mipmap.patient_chart);
 
             imageView2.setOnClickListener(new View.OnClickListener() {
@@ -60,7 +59,7 @@ public class CustomListAdapter extends ArrayAdapter  {
             return rowView;
         }
     public void launchRingDialog(View view, final int position) {
-        final ProgressDialog ringProgressDialog = ProgressDialog.show(CustomListAdapter.this.getContext(), "Please wait ...",	"Loading ...", true);
+        final ProgressDialog ringProgressDialog = ProgressDialog.show(CustomListAdapter.this.getContext(), "Várjon ...",	"Betöltés folyamatban ...", true);
         ringProgressDialog.setCancelable(false);
         new Thread(new Runnable() {
             @Override

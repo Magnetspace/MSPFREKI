@@ -1,9 +1,7 @@
 package net.magnetspace.frequency.GUI;
 
-
-import android.content.Context;
+import java.util.Locale;
 import android.content.res.Configuration;
-import android.provider.Settings;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,28 +9,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
-
 import net.magnetspace.frequency.GUI.Adapters.LanguageArrayAdapter;
 import net.magnetspace.frequency.R;
 import net.magnetspace.frequency.SQL.DatabaseHandler;
 
-import java.util.Locale;
-
 public class LanguageSelectFragment extends Fragment {
     private String selected_item="English";
     private static String languageCode="en";
-    private DatabaseHandler databaseHandler;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        databaseHandler = new DatabaseHandler(getActivity().getBaseContext());
-        Locale current = new Locale(databaseHandler.getLocale());
+        Locale current = Locale.getDefault();
         Configuration config = new Configuration();
         config.locale = current;
         getActivity().getBaseContext().getResources().updateConfiguration(config,
                 getActivity().getBaseContext().getResources().getDisplayMetrics());
         View rootView = inflater.inflate(R.layout.fragment_language_select, container, false);
+
         languageCode = current.getLanguage().split("_")[0];
         if(languageCode.equals("us")) languageCode = "en";
         if(languageCode.equals(""))
@@ -54,6 +47,7 @@ public class LanguageSelectFragment extends Fragment {
     }
 
     private void setLanguage() {
+        DatabaseHandler databaseHandler = new DatabaseHandler(getActivity().getBaseContext());
         Locale locale;
         if(selected_item.equals("Magyar"))
             locale = new Locale("hu");

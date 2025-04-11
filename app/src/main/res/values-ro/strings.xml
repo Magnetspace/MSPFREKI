@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Magnetspace Frequency 1.4</string>
     <string name="stop">Oprire</string>
     <string name="power">Intensitate:</string>
     <string name="start">Pornire</string>

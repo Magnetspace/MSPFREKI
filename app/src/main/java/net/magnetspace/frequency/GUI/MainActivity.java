@@ -14,6 +14,8 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.database.sqlite.SQLiteException;
 import android.os.Build;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -86,22 +88,33 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
             // something went wrong, deal with it here
         }
     }
-
     @Override
     protected  void onCreate(Bundle savedInstance) {
+        DatabaseHandler db = new DatabaseHandler(this);
+        try {
+            if(!isDbFileExist())
+                copydatabase();
+            else {
+                if (!db.checkVersion())
+                    copydatabase();
+            }
+        }
+        catch (SQLiteException exception)
+        {
+            copydatabase();
+        }
+
+        Configuration config = new Configuration();
+        config.locale = new Locale(db.getLocale());
+
+        this.getBaseContext().getResources().updateConfiguration(config,
+                this.getBaseContext().getResources().getDisplayMetrics());
+
         super.onCreate(savedInstance);
         setContentView(R.layout.main_activity);
         gContext = getBaseContext();
         RootTools.debugMode = true; // debug mode
         hideSystemBar();
-        boolean tempB = isDbFileExist();
-        if(!isDbFileExist())
-            copydatabase();
-        else {
-            DatabaseHandler db = new DatabaseHandler(this);
-            if(!db.checkVersion())
-                copydatabase();
-        }
 
         String[] temp = {getResources().getString(R.string.languages), getResources().getString(R.string.main_menu)};
         tabs = temp;
@@ -157,7 +170,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     }
 
     public void launchRingDialog(View view) {
-        final ProgressDialog ringProgressDialog = ProgressDialog.show(MainActivity.this, "Please wait ...",	"Loading ...", true);
+        final ProgressDialog ringProgressDialog = ProgressDialog.show(MainActivity.this, "Lista betöltése(list loading)",	"", true);
         ringProgressDialog.setCancelable(false);
         new Thread(new Runnable() {
             @Override
@@ -209,6 +222,12 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                         startActivity(getIntent());
                     }})
                 .setNegativeButton(android.R.string.no, null).show();
+    }
+
+    public void setLanguageButton(View view)
+    {
+        Intent i = new Intent( android.provider.Settings.ACTION_LOCALE_SETTINGS );
+        startActivity(i);
     }
 
     public boolean isDbFileExist()
